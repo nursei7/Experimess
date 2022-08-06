@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Home Page</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Reveal - v4.8.0
+  * Template URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+ 
+
+
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+
+      <div id="logo">
+        <h1><a href="{{url_for('home')}}">Experi<span>mess</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{{url_for('home')}}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{{url_for('home')}}#about">About</a></li>
+          <li><a class="nav-link scrollto " href="{{url_for('profile')}}">Profile</a></li>
+          <li><a class="nav-link scrollto" href="{{url_for('home')}}#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= hero Section ======= -->
+  <section id="hero">
+
+    <div class="hero-content" data-aos="fade-up">
+      <h2>Experi<span>mess</span><br></h2>
+      <div>
+        <a href="{{url_for('search')}}" class="btn-get-started scrollto">Search Tasks</a>
+        <a href="{{url_for('contribute')}}" class="btn-projects scrollto">Upload Tasks</a>
+      </div>
+    </div>
+
+    <div class="hero-slider swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image: url('static/assets/img/hero-carousel/1.jpg');"></div>
+        <div class="swiper-slide" style="background-image: url('static/assets/img/hero-carousel/2.jpg');"></div>
+        <div class="swiper-slide" style="background-image: url('static/assets/img/hero-carousel/3.jpg');"></div>
+        <div class="swiper-slide" style="background-image: url('static/assets/img/hero-carousel/4.jpg');"></div>
+        <div class="swiper-slide" style="background-image: url('static/assets/img/hero-carousel/5.jpg');"></div>
+      </div>
+    </div>
+
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-6 about-img">
+            <!-- <img src="static/assets/img/about-img.jpg" alt=""> -->
+          </div>
+
+          <div class="">
+            <div class="section-header">
+               <h2>About</h2>
+            </div>
+           
+            <h3>Imagine that you are interested in studying contributions in a public goods game between in-groups and out-groups. While it is easy to find papers with public good games on google scholar, different in-group out-group manipulations are more difficult to find. This is what Experimess hopes to help with. It builds a collection of papers with useful tasks and methodologies that might be difficult to find because they are not exactly “games” and they don’t belong to a particular literature. Experimental materials are linked to each entry so you can spend less time writing instructions and more time writing papers. 
+              Anyone can search for and upload tasks. While this space was designed by and for experimental economists, some entries include papers from psychology and other social sciences. When uploading materials please be sure to provide the original source of the papers. Do not upload published materials without the approval of publishers, pictures of cats, or your shopping list. 
+              Experimess received support and resources from the SSEL, C-BID, and the social sciences division at NYUAD. 
+              </h3>
+
+            <!-- <ul>
+              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+            </ul> -->
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+   
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p>Is it all a mess? Are we missing a category? Is there a wrong entry? Any suggestions?
+            Send us an email!</p>            
+              </div>
+
+        <div class="row contact-info">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Address</h3>
+              <address>Saadiyat Marina District - Abu Dhabi - United Arab Emirates</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="bi bi-phone"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="bi bi-envelope"></i>
+              <h3>Email</h3>
+              <p><a href="email@email.com">email@email.com</a></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="container mb-4">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14519.559259858976!2d54.4345558!3d24.5238948!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x14e8727ec5ee2be1!2sNew%20York%20University%20Abu%20Dhabi!5e0!3m2!1sen!2s!4v1658920613263!5m2!1sen!2s" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+
+ 
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        <!-- &copy; Copyright <strong>Reveal</strong>. All Rights Reserved -->
+      </div>
+      <div class="credits">
+        <!--
+        All the links in the footer should remain intact.
+        You can delete the links only if you purchased the pro version.
+        Licensing information: https://bootstrapmade.com/license/
+        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Reveal
+      -->
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/aos/aos.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>

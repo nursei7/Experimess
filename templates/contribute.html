@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Upload Tasks</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Reveal - v4.8.0
+  * Template URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+
+
+
+
+  
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+
+      <div id="logo">
+        <h1><a href="{{url_for('home')}}">Experi<span>mess</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="nav-link scrollto active" href="{{url_for('home')}}">Home</a></li>
+            <li><a class="nav-link scrollto" href="{{url_for('home')}}#about">About</a></li>
+            <li><a class="nav-link scrollto " href="{{url_for('profile')}}">Profile</a></li>
+            <li><a class="nav-link scrollto" href="{{url_for('home')}}#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <main id="main">
+
+    
+
+    <!-- ======= Services Section ======= -->
+    <section id="services">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Paper and Task form</h2>
+          <h4>Experimess is open to everyone. Please respect its purpose. 
+            To upload materials, you will need to register first. Register here.
+            Don’t be shy!  Upload your paper even if you don’t think it fits exactly in a category. Experimess is more about experimental tasks than games but we welcome all entries. Use the “tag” option to explain things about your entry that are not captured by the given categories.
+            At this point, Experimess can only host links. To share experimental instructions, data, code, or other materials, please create an open, sharable link for them. 
+            Ready? Go!
+            </h4>
+
+          <h3> Step 1 – Paper and Task</h3>  
+          <p>Insert the DOI of the paper you wish to upload. Either the number or the link will work. Experimess will find the title, authors, journal, year, and citation count.</p>
+        </div>
+
+<form method = 'POST' action = "">
+    {{form.hidden_tag()}}
+    <!-- {{ form.csrf_token }}  -->
+   <p>DOI*: {{form.doi()}}</p><br>
+    
+   <div class="buttons_two">
+    <p>Are you an author of the paper you are uploading?*</p>
+    <input type="radio" name="you_author" value="yes" onclick="setcheckbox_two()">Yes<br>
+    <input type="radio" name="you_author" value="no" onclick="setcheckbox_two()">No<br>
+    </div><br>
+
+
+     <!-- <form method = 'POST' action = ""></form> -->
+     <p>Insert link for Experimental Instructions. If Experimental Instructions are included in the paper, then just insert paper’s DOI again.* </p>
+     <p>{{form.instructions()}}</p>
+     <p>Insert link for Code. Code can be anything from ztree to stata; anything that you can share.</p>
+     <p> {{form.code()}}</p>
+     <p>Insert link for Data. Come on! You know it is better if we all share our data! </p>
+     <p>{{form.data()}}</p>
+    
+    
+
+    <p>Categories</p>
+
+    <input name="featured_ad" value="0" type="checkbox" onclick="resetradio(this)">Real Effort Tasks
+
+        <div class="buttons">
+            <input type="radio" name="ad_pack_id" value="Stereotyped tasks" onclick="setcheckbox()">Stereotyped tasks<br>
+            <input type="radio" name="ad_pack_id" value="Other" onclick="setcheckbox()">Other<br>
+        </div>
+    </input>
+    <br><br>
+
+
+    <input name="featured_ad_one" value="1" type="checkbox" onclick="resetradio_one(this)">Risk Elicitation Tasks
+
+        <div   class="buttons_one">
+            <input type="radio" name="ad_pack_id_one" value="Risk aversion" onclick="setcheckbox_one()">Risk aversion<br>
+            <input type="radio" name="ad_pack_id_one" value="Loss aversion" onclick="setcheckbox_one()">Loss aversion<br>
+            <input type="radio" name="ad_pack_id_one" value="Higher order risk preferences" onclick="setcheckbox_one()">Higher order risk preferences<br>
+            <input type="radio" name="ad_pack_id_one" value="Probability weighting" onclick="setcheckbox_one()">Probability weighting<br>
+            <input type="radio" name="ad_pack_id_one" value="Experimentally validated survey" onclick="setcheckbox_one()">Experimentally validated survey<br>
+            <input type="radio" name="ad_pack_id_one" value="Other" onclick="setcheckbox_one()">Other<br>
+        </div>
+    </input>
+    <br><br>
+
+
+    <input name="featured_ad_two" value="2" type="checkbox" onclick="resetradio_two(this)">Time Preferences Elicitation Tasks
+
+    <div class="buttons_two">
+        <input type="radio" name="ad_pack_id_two" value="Discount rates" onclick="setcheckbox_two()">Discount rates<br>
+        <input type="radio" name="ad_pack_id_two" value="Self-control tasks" onclick="setcheckbox_two()">Self-control tasks<br>
+        <input type="radio" name="ad_pack_id_two" value="Experimentally validated survey" onclick="setcheckbox_two()">Experimentally validated survey<br>
+        <input type="radio" name="ad_pack_id_two" value="Other" onclick="setcheckbox_two()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+
+    <input name="featured_ad_three" value="3" type="checkbox" onclick="resetradio_three(this)">Cognitive Reflection Tasks
+
+    <div class="buttons_three">
+        <input type="radio" name="ad_pack_id_three" value="IQ" onclick="setcheckbox_three()">IQ<br>
+        <input type="radio" name="ad_pack_id_three" value="Raven test" onclick="setcheckbox_three()">Raven test<br>
+        <input type="radio" name="ad_pack_id_three" value="Experimentally validated survey" onclick="setcheckbox_three()">Experimentally validated survey<br>
+        <input type="radio" name="ad_pack_id_three" value="Other" onclick="setcheckbox_three()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+
+    <input name="featured_ad_four" value="4" type="checkbox" onclick="resetradio_four(this)">Ambiguity
+
+    <div class="buttons_four">
+        <input type="radio" name="ad_pack_id_four" value="Other" onclick="setcheckbox_two()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+
+
+    <input name="featured_ad_five" value="5" type="checkbox" onclick="resetradio_five(this)">Minimal group paradigm In-group Out-group
+    <div class="buttons_five">
+        <input type="radio" name="ad_pack_id_five" value="Other" onclick="setcheckbox_five()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+
+    <input name="'featured_ad_six" value="6" type="checkbox" onclick="resetradio_six(this)">Social Norm elicitation tasks
+    <div class="buttons_six">
+        <input type="radio" name="ad_pack_id_six" value="Coordination" onclick="setcheckbox_six()">Coordination<br>
+        <input type="radio" name="ad_pack_id_six" value="Belief elicitation" onclick="setcheckbox_six()">Belief elicitation<br>
+        <input type="radio" name="ad_pack_id_six" value="Rule-following" onclick="setcheckbox_six()">Rule-following<br>
+        <input type="radio" name="ad_pack_id_six" value="Other" onclick="setcheckbox_six()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+    <input name="'featured_ad_seven" value="7" type="checkbox" onclick="resetradio_seven(this)">Altruism
+    <div class="buttons_seven">
+        <input type="radio" name="ad_pack_id_seven" value="Dictator game" onclick="setcheckbox_seven()">Dictator game<br>
+        <input type="radio" name="ad_pack_id_seven" value="Charitable giving tasks" onclick="setcheckbox_seven()">Charitable giving tasks<br>
+        <input type="radio" name="ad_pack_id_seven" value="Other" onclick="setcheckbox_seven()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+
+
+    <input name="'featured_ad_eight" value="8" type="checkbox" onclick="resetradio_eight(this)">Belief elicitation tasks
+    <div class="buttons_eight">
+        <input type="radio" name="ad_pack_id_eight" value="Point estimates" onclick="setcheckbox_eight()">Point estimates<br>
+        <input type="radio" name="ad_pack_id_eight" value="Whole distributions" onclick="setcheckbox_eight()">Whole distributions<br>
+        <input type="radio" name="ad_pack_id_eight" value="Confidence intervals" onclick="setcheckbox_eight()">Confidence intervals<br>
+        <input type="radio" name="ad_pack_id_eight" value="Beliefs updating" onclick="setcheckbox_eight()">Beliefs updating<br>
+        <input type="radio" name="ad_pack_id_eight" value="Overconfidence" onclick="setcheckbox_eight()">Overconfidence<br>
+        <input type="radio" name="ad_pack_id_eight" value="Second-order beliefs" onclick="setcheckbox_eight()">Second-order beliefs<br>
+        <input type="radio" name="ad_pack_id_eight" value="Other" onclick="setcheckbox_eight()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+
+    <input name="featured_ad_nine" value="9" type="checkbox" onclick="resetradio_nine(this)">Creativity elicitation tasks
+    <div class="buttons_nine">
+        <input type="radio" name="ad_pack_id_nine" value="Other" onclick="setcheckbox_nine()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+
+    <input name="featured_ad_ten" value="10" type="checkbox" onclick="resetradio_ten(this)">Implicit associations tasks
+    <div class="buttons_ten">
+        <input type="radio" name="ad_pack_id_ten" value="Other" onclick="setcheckbox_ten()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+
+    <input name="featured_ad_eleven" value="11" type="checkbox" onclick="resetradio_eleven(this)">Lying task
+    <div class="buttons_eleven">
+        <input type="radio" name="ad_pack_id_eleven" value="Die / coin games" onclick="setcheckbox_eleven()">Die / coin games<br>
+        <input type="radio" name="ad_pack_id_eleven" value="Send-receiver games" onclick="setcheckbox_eleven()">Send-receiver games<br>
+        <input type="radio" name="ad_pack_id_eleven" value="Other" onclick="setcheckbox_eleven()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+
+
+    <input name="featured_ad_12" value="12" type="checkbox" onclick="resetradio_12(this)">Trust tasks
+    <div class="buttons_12">
+        <input type="radio" name="ad_pack_id_12" value="Trust game" onclick="setcheckbox_12()">Trust game<br>
+        <input type="radio" name="ad_pack_id_12" value="Participation game" onclick="setcheckbox_12()">Participation game<br>
+        <input type="radio" name="ad_pack_id_12" value="Lost-wallet game" onclick="setcheckbox_12()">Lost-wallet game<br>
+        <input type="radio" name="ad_pack_id_12" value="Betrayal aversion tasks" onclick="setcheckbox_12()">Betrayal aversion tasks<br>
+        <input type="radio" name="ad_pack_id_12" value="Experimentally validated survey" onclick="setcheckbox_12()">Experimentally validated survey<br>
+        <input type="radio" name="ad_pack_id_12" value="Other" onclick="setcheckbox_12()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+
+    <input name="featured_ad_13" value="13" type="checkbox" onclick="resetradio_13(this)">Cooperation
+    <div class="buttons_13">
+        <input type="radio" name="ad_pack_id_13" value="Conditional cooperation" onclick="setcheckbox_13()">Conditional cooperation<br>
+        <input type="radio" name="ad_pack_id_13" value="Experimentally validated survey" onclick="setcheckbox_13()">Experimentally validated survey<br>
+        <input type="radio" name="ad_pack_id_13" value="Other" onclick="setcheckbox_13()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+
+    <input name="featured_ad_14" value="14" type="checkbox" onclick="resetradio_14(this)">Competitiveness
+    <div class="buttons_14">
+        <input type="radio" name="ad_pack_id_14" value="Tournament entry" onclick="setcheckbox_14()">Tournament entry<br>
+        <input type="radio" name="ad_pack_id_14" value="Tournament performance" onclick="setcheckbox_14()">Tournament performance<br>
+        <input type="radio" name="ad_pack_id_14" value="Contest game" onclick="setcheckbox_14()">Contest game<br>
+        <input type="radio" name="ad_pack_id_14" value="Experimentally validated survey" onclick="setcheckbox_14()">Experimentally validated survey<br>
+        <input type="radio" name="ad_pack_id_14" value="Other" onclick="setcheckbox_14()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+
+    <input name="featured_ad_15" value="15" type="checkbox" onclick="resetradio_15(this)">Gender revelation methods
+    <div class="buttons_15">
+        <input type="radio" name="ad_pack_id_15" value="Voices" onclick="setcheckbox_15()">Voices<br>
+        <input type="radio" name="ad_pack_id_15" value="Pictures" onclick="setcheckbox_15()">Pictures<br>
+        <input type="radio" name="ad_pack_id_15" value="Names" onclick="setcheckbox_15()">Names<br>
+        <input type="radio" name="ad_pack_id_15" value="Other" onclick="setcheckbox_15()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+
+    <input name="featured_ad_16" value="16" type="checkbox" onclick="resetradio_16(this)">Emotional intelligence
+    <div class="buttons_16">
+        <input type="radio" name="ad_pack_id_16" value="Eyes in the mind test" onclick="setcheckbox_16()">Eyes in the mind test<br>
+        <input type="radio" name="ad_pack_id_16" value="Other" onclick="setcheckbox_16()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+
+    <input name="featured_ad_17" value="17" type="checkbox" onclick="resetradio_17(this)">Strategic sophistication
+    <div class="buttons_17">
+        <input type="radio" name="ad_pack_id_17" value="K-level thinking" onclick="setcheckbox_17()">K-level thinking<br>
+        <input type="radio" name="ad_pack_id_17" value="Beauty contest" onclick="setcheckbox_17()">Beauty contest<br>
+        <input type="radio" name="ad_pack_id_17" value="Other" onclick="setcheckbox_17()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+
+    <input name="featured_ad_18" value="18" type="checkbox" onclick="resetradio_18(this)">Ideological and Political Preferences
+    <div class="buttons_18">
+        <input type="radio" name="ad_pack_id_18" value="Other" onclick="setcheckbox_18()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+    <input name="featured_ad_19" value="19" type="checkbox" onclick="resetradio_19(this)">Bargaining
+    <div class="buttons_19">
+        <input type="radio" name="ad_pack_id_19" value="Multilateral Bargaining" onclick="setcheckbox_19()">Multilateral Bargaining<br>
+        <input type="radio" name="ad_pack_id_19" value="Bilateral Bargaining" onclick="setcheckbox_19()">Bilateral Bargaining<br>
+        <input type="radio" name="ad_pack_id_19" value="Other" onclick="setcheckbox_19()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+
+
+    <input name="featured_ad_20" value="20" type="checkbox" onclick="resetradio_20(this)">Sabotage
+    <div class="buttons_20">
+        <input type="radio" name="ad_pack_id_20" value="Other" onclick="setcheckbox_20()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+
+    <input name="featured_ad_21" value="21" type="checkbox" onclick="resetradio_21(this)">Willingness to Pay
+    <div class="buttons_21">
+        <input type="radio" name="ad_pack_id_21" value="Other" onclick="setcheckbox_21()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+
+    <input name="featured_ad_22" value="22" type="checkbox" onclick="resetradio_22(this)">Voting
+    <div class="buttons_22">
+        <input type="radio" name="ad_pack_id_22" value="Other" onclick="setcheckbox_22()">Other<br>
+    </div>
+    </input>
+    <br><br>
+
+
+    <p>Would you like to give the task of this entry a customized tag that might make it easier to search? For example, If you have contributed a real effort task, you might want to add “slider task”, or “counting task” as tags. Use multiple tags to explain the task better.
+        <br>Use comma to add multiple tags.</p>
+     <p>{{form.customized_tag()}}</p>
+
+    
+     <h3> Step 2 -Type, Game, Literature</h3>  
+    
+    <p>Type of Experiment</p>
+
+        <div class="buttons">
+            <input type="radio" name="ex_type" value="Field" onclick="setcheckbox()">Field<br>
+            <input type="radio" name="ex_type" value="Laboratory" onclick="setcheckbox()">Laboratory<br>
+            <input type="radio" name="ex_type" value="Lab in the field" onclick="setcheckbox()">Lab in the field<br>
+            <input type="radio" name="ex_type" value="Online" onclick="setcheckbox()">Online<br>
+            <input type="radio" name="ex_type" value="Laboratory" onclick="setcheckbox()">Other<br>
+
+        </div>
+    <br><br>
+
+    <p>Experimental Game</p>
+        <div class="buttons">
+            <input type="radio" name="game_type" value="Public Good Game" onclick="setcheckbox()">Public Good Game<br>
+            <input type="radio" name="game_type" value="Dictator Game" onclick="setcheckbox()">Dictator Game<br>
+            <input type="radio" name="game_type" value="Ultimatum Game" onclick="setcheckbox()">Ultimatum Game<br>
+            <input type="radio" name="game_type" value="Centipede Game" onclick="setcheckbox()">Centipede Game<br>
+            <input type="radio" name="game_type" value="Prisoners Dilemma" onclick="setcheckbox()">Prisoners Dilemma<br>
+            <input type="radio" name="game_type" value="Coordination Game" onclick="setcheckbox()">Coordination Game<br>
+            <input type="radio" name="game_type" value="Bargaining Game" onclick="setcheckbox()">Bargaining Game<br>
+            <input type="radio" name="game_type" value="Maze Game" onclick="setcheckbox()">Maze Game<br>
+            <input type="radio" name="game_type" value="Field" onclick="setcheckbox()">Field<br>
+            <input type="radio" name="game_type" value="Other" onclick="setcheckbox()">Other<br>
+        </div>
+    <br><br>
+
+    <p>Literature</p>
+        <div class="buttons">
+            <input type="radio" name="literature" value="Gender" onclick="setcheckbox()">Gender<br>
+            <input type="radio" name="literature" value="Social Preferences" onclick="setcheckbox()">Social Preferences<br>
+            <input type="radio" name="literature" value="Social Norms (Compliance)" onclick="setcheckbox()">Social Norms (Compliance)<br>
+            <input type="radio" name="literature" value="Moral Preferences (Lying, Cheating)" onclick="setcheckbox()">Moral Preferences (Lying, Cheating)<br>
+            <input type="radio" name="literature" value="Risk and Uncertainty" onclick="setcheckbox()">Risk and Uncertainty<br>
+            <input type="radio" name="literature" value="Loss Aversion" onclick="setcheckbox()">Loss Aversion<br>
+            <input type="radio" name="literature" value="Time Preferences" onclick="setcheckbox()">Time Preferences<br>
+            <input type="radio" name="literature" value="Cooperation" onclick="setcheckbox()">Cooperation<br>
+            <input type="radio" name="literature" value="Coordination" onclick="setcheckbox()">Coordination<br>
+            <input type="radio" name="literature" value="Biases and Heuristics" onclick="setcheckbox()">Biases and Heuristics<br>
+            <input type="radio" name="literature" value="Information" onclick="setcheckbox()">Information<br>
+            <input type="radio" name="literature" value="Artificial Intelligence / Human-Robot interactions" onclick="setcheckbox()">Artificial Intelligence / Human-Robot interactions<br>
+            <input type="radio" name="literature" value="Networks" onclick="setcheckbox()">Networks<br>
+            <input type="radio" name="literature" value="Identity" onclick="setcheckbox()">Identity<br>
+            <input type="radio" name="literature" value="Other" onclick="setcheckbox()">Other<br>
+        </div>
+    <br><br>
+
+    <p>That is all! 
+        After you press “Submit” You will be able to find your entry in the “Search Tasks” under the categories you specified during step 1
+        
+        <br>By clicking “Submit” you finalize this entry and you are becoming a little more awesome
+        </p>
+
+    {{form.submit()}}
+
+
+
+   
+</form>
+
+
+
+
+
+
+
+    
+
+    </section><!-- End Services Section -->
+
+   
+
+    
+
+   
+
+    <!-- ======= Call To Action Section ======= -->
+    <!-- <section id="call-to-action">
+      <div class="container" data-aos="zoom-out">
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3 class="cta-title">Call To Action</h3>
+            <p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="#">Call To Action</a>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- End Call To Action Section -->
+
+   
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        <!-- &copy; Copyright <strong>Reveal</strong>. All Rights Reserved -->
+      </div>
+      <div class="credits">
+        <!--
+        All the links in the footer should remain intact.
+        You can delete the links only if you purchased the pro version.
+        Licensing information: https://bootstrapmade.com/license/
+        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Reveal
+      -->
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/aos/aos.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>
